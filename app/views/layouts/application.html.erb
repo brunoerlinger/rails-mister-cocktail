@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsMisterCocktail</title>
+    <title><%= yield(:title_tag).blank? ? "Mr. Bruno Cocktail" : yield(:title_tag) %></title>
     <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
     <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>
